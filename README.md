@@ -14,7 +14,11 @@
 На выходе нужен график индекса в разрезе года, месяца и тд. (с учетом всех заключенных контрактов и выдачей автомобилей владельцам)
   Требования к интеграционной части
  Облачный сервер, (пользователь заходит на сайт и имеет возможность оценить динамику продаж в разрезе месяца и года на рынке.)
+                                                                  
                                                                   Ссылки на данные
+                                                                  
 https://drive.google.com/file/d/1SofL8Ypcec6CitJ4uiPDN3Lqn_QS2Dvm/view?usp=share_link
+
 https://drive.google.com/file/d/1mg3R70KdQSkTVuOqApGNARIPQwPAzL8Z/view?usp=share_link
+
 https://drive.google.com/file/d/1V8ZC9AZceHf6uPo-uYZy2_yF7gHFrjtz/view?usp=share_link
