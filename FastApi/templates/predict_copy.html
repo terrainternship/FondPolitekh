@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <br>
+    <div class="row">
+      <div class="col-3">
+
+      </div>
+
+
+      <div class="col-sm-6">
+        <form action="/upload/" enctype="multipart/form-data" method="post">
+
+          <div class="card">
+              <div class="card-body">
+              <h5 class="card-title">Выберите файл для загрузки данных о продажах</h5>
+              <p class="card-text">После выбора файла нажмите кнопку "Сохранить файл"</p>
+              <label class="btn btn-primary">
+                      Выбрать файл<input type="file" name="files" style="display: none;">
+              </label>
+              <button type="submit" class="btn btn-primary">Сохранить файл</button>
+                  {% if flag_load %}
+                  <i> {{ filename_load }} </i>
+                  {% endif %}
+              </div>
+        </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div id="{{ ids }}"></div>
+        </div>
+    </div>
+
+
+<div id="plot"></div>
+    <script>
+        var fig = {{ fig_json | safe }};
+        Plotly.newPlot('plot', fig);
+    </script>
+
+
+    <script type="text/javascript">
+        // plots the figure with id
+        // id much match the div id above in the html
+        var figures = {{figuresJSON | safe}};
+        Plotly.newPlot('ids', figures);
+<!--        var ids = {{ids | safe}};-->
+<!--        for(var i in figures) {-->
+            Plotly.plot(ids[i],
+<!--                figures[i].data,-->
+                figures[i].layout || {});
+<!--        }-->
+    </script>
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forecasting</title>
+
+    <script src="/static/bootstrap/js/plotly-latest.min.js"></script>
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <br>
+    <div class="row">
+      <div class="col-3">
+
+      </div>
+
+
+      <div class="col-sm-6">
+        <form action="/upload/" enctype="multipart/form-data" method="post">
+
+          <div class="card">
+              <div class="card-body">
+              <h5 class="card-title">Выберите файл для загрузки данных о продажах</h5>
+              <p class="card-text">После выбора файла нажмите кнопку "Загрузить файл"</p>
+              <label class="btn btn-primary">
+                      Выбрать файл<input type="file" name="files" style="display: none;" accept=".csv">
+              </label>
+              <button type="submit" class="btn btn-primary">Загрузить файл</button>
+                  {% if flag_load %}
+                  <i> {{ filename_load }} </i>
+                  {% endif %}
+              </div>
+        </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div id="show_3m"></div>
+            <script>
+                var plots_3m = {{ show_3m | safe }};
+                Plotly.newPlot('show_3m', plots_3m);
+            </script>
+        </div>
+        <div class="col-6">
+            <div id="show_6m"></div>
+            <script>
+                var plots_6m = {{ show_6m | safe }};
+                Plotly.newPlot('show_6m', plots_6m);
+            </script>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div id="index_instant_show_3m"></div>
+            <script>
+                var index_instant_show_3m = {{ index_instant_show_3m | safe }};
+                Plotly.newPlot('index_instant_show_3m', index_instant_show_3m);
+            </script>
+        </div>
+        <div class="col-6">
+            <div id="index_instant_show_6m"></div>
+            <script>
+                var index_instant_show_6m = {{ index_instant_show_6m | safe }};
+                Plotly.newPlot('index_instant_show_6m', index_instant_show_6m);
+            </script>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div id="index_month_show_3m"></div>
+            <script>
+                var index_month_show_3m = {{ index_month_show_3m | safe }};
+                Plotly.newPlot('index_month_show_3m', index_month_show_3m);
+            </script>
+        </div>
+        <div class="col-6">
+            <div id="index_month_show_6m"></div>
+            <script>
+                var index_month_show_6m = {{ index_month_show_6m | safe }};
+                Plotly.newPlot('index_month_show_6m', index_month_show_6m);
+            </script>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div id="index_year_show_3m"></div>
+            <script>
+                var index_year_show_3m = {{ index_year_show_3m | safe }};
+                Plotly.newPlot('index_year_show_3m', index_year_show_3m);
+            </script>
+        </div>
+        <div class="col-6">
+            <div id="index_year_show_6m"></div>
+            <script>
+                var index_year_show_6m = {{ index_year_show_6m | safe }};
+                Plotly.newPlot('index_year_show_6m', index_year_show_6m);
+            </script>
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+
+
+

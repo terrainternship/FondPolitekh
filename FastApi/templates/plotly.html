@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plotly Integration with Flask</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="plot"></div>
+    <script>
+        var fig = {{ fig_json | safe }};
+        Plotly.newPlot('plot', fig);
+    </script>
+</body>
+</html>

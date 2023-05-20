@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <br>
+    <div class="row">
+      <div class="col-3">
+
+      </div>
+
+
+      <div class="col-sm-6">
+        <form action="/upload/" enctype="multipart/form-data" method="post">
+
+          <div class="card">
+              <div class="card-body">
+              <h5 class="card-title">Выберите файл для загрузки данных о продажах</h5>
+              <p class="card-text">После выбора файла нажмите кнопку "Загрузить файл"</p>
+              <label class="btn btn-primary">
+                      Выбрать файл<input type="file" name="files" style="display: none;" accept=".csv">
+              </label>
+              <button type="submit" class="btn btn-primary">Загрузить файл</button>
+                  {% if flag_load %}
+                  <i> {{ filename_load }} </i>
+                  {% endif %}
+              </div>
+        </div>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
+
+
+
+
